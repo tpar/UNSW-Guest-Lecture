@@ -1,0 +1,31 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+    <div class="row">
+
+        @if (ViewBag.IsAuthenticated)
+        {
+            <h1>Welcome @ViewBag.Name</h1>
+            <div>
+                <button type="button" class="btn btn-outline-primary"
+                        onclick="location.href='@Url.Action("ShowBalances")'">
+                    View Balances
+                </button>
+            </div>
+        }
+        
+        @if(!ViewBag.IsAuthenticated)
+        {
+        <h1>Internet Banking Application</h1>
+        <div>
+            <button type="button" class="btn btn-outline-primary"
+                    onclick="location.href='@Url.Action("Login", "Account")'">
+                Click here to Log in
+            </button>
+        </div>
+        }
+
+
+    </div>
+

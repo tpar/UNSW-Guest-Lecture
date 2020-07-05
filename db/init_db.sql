@@ -1,0 +1,19 @@
+
+CREATE TABLE Customer (
+  Id  INT NOT NULL IDENTITY PRIMARY KEY,
+  Auth0_Ref VARCHAR(100)  NOT NULL,
+  FirstName  VARCHAR(100),
+  LastName VARCHAR(100),
+  Email  VARCHAR(100),
+  LastSeen DATETIME
+);
+
+CREATE TABLE Account (
+  Id  INT  NOT NULL IDENTITY PRIMARY KEY,
+  CustomerID INT FOREIGN KEY REFERENCES Customer(Id),
+  AccountName VARCHAR(100),
+  AccountType  VARCHAR(100),
+  AccountBalance DECIMAL NOT NULL,
+  Bsb VARCHAR(7),
+  AccountNumber VARCHAR(7)
+);

@@ -1,0 +1,46 @@
+﻿@using SampleMvcApp.Models;
+
+@{
+    ViewData["Title"] = "Index";
+    var customers = ViewData["customers"] as IEnumerable<Customer>;
+
+}
+
+<h2>Admin - User Summary</h2>
+
+
+<div class="container">
+
+    <table class="table">
+        <thead style="font-weight: bold">
+            <tr>
+                <td>First Name</td>
+                <td>Last Name</td>
+                <td>Email</td>
+                <td>Last Seen</td>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var customer in customers)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => customer.FirstName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => customer.LastName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => customer.Email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => customer.LastSeen)
+                    </td>
+                </tr>
+            }
+        </tbody>
+
+    </table>
+</div>
+

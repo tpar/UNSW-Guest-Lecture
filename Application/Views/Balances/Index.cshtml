@@ -1,0 +1,66 @@
+﻿@using SampleMvcApp.Models;
+
+@{
+    ViewData["Title"] = "Index";
+    var data = ViewData["BalanceViewModel"] as BalanceViewModel;
+}
+
+<style>
+    .balance{
+        font-weight: bold
+    }
+</style>
+
+<html>
+<div class="container">
+    <h2>Welcome, @data.Name</h2>
+    <h3>Net Worth: <b>@data.NetWorth</b></h3>
+    <h4>Here is a summary of your accounts</h4>
+
+    <hr />
+    <dl class="dl-horizontal">
+    </dl>
+</div>
+
+
+    <div class="container">
+
+        <table class="table">
+            <thead style="font-weight: bold">
+                <tr>
+                    <td>Account Number</td>
+                    <td>BSB</td>
+                    <td>Account Name</td>
+                    <td>Account Type</td>
+                    <td>Balance</td>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var account in @data.Accounts)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => account.Bsb)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => account.AccountNumber)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => account.AccountName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => account.AccountType)
+                        </td>
+                        <td class="balance">
+                            @Html.DisplayFor(modelItem => account.Balance)
+                        </td>
+                    </tr>
+                }
+            </tbody>
+
+        </table>
+    </div>
+</html>
+
+    
