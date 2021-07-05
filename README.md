@@ -1,7 +1,9 @@
-# UNSW-Guest-Lecture
+# UNSW Guest Lecture
 
-I delivered a Guest Lecure for the University of New South Wales (UNSW) on the 6th July 2020. The slides of the same are available <a href="https://github.com/tpar/UNSW-Guest-Lecture/blob/master/UNSW%20Guest%20Lecture.pdf">here</a>
-This repository contains the code I presented, with the Broken Access Control vulnerability. 
+I delivered a Guest Lecure for the University of New South Wales (UNSW) on the 6th July 2020. This repository contains the code I presented, with the Broken Access Control vulnerability. 
+
+# Slides 
+Here is a <a href="https://github.com/tpar/UNSW-Guest-Lecture/blob/master/UNSW%20Guest%20Lecture.pdf">link</a> to the slides.
 
 # Pre-Requisites to run
 
